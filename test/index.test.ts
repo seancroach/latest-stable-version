@@ -1,6 +1,9 @@
 import test from "ava";
+import type { PackageJson } from "type-fest";
 import { latestStableVersion } from "../source/index";
-import packageJson = require("../package.json");
+
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-var-requires
+const packageJson: PackageJson = require("../package.json");
 
 test("latestStableVersion()", async (t) => {
   const thisLatestStableVersion = await latestStableVersion({
@@ -10,8 +13,8 @@ test("latestStableVersion()", async (t) => {
 
   t.true(thisLatestStableVersion === packageJson.version);
 
-  t.throws(() => {
-    void latestStableVersion({
+  await t.throwsAsync(async () => {
+    await latestStableVersion({
       owner: "seancroach",
       repo: "if-i-name-a-repo-this-shoot-me-down-where-i-stand",
     });

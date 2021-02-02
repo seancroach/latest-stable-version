@@ -39,7 +39,8 @@ export async function latestStableVersion(
     const message =
       e instanceof Error
         ? `Octokit has thrown an error - "${e.message}"`
-        : `Octokit threw "${Object.toString.call(e)}"`;
+        : // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+          `Octokit threw "${Object.toString.call(e) as string}"`;
     throw new Error(message);
   }
 
