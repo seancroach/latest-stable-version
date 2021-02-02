@@ -1,0 +1,7 @@
+{
+  "extends": "@seancroach/tsconfig",
+  "compilerOptions": {
+    "outDir": "../build"
+  },
+  "files": ["index.ts"]
+}
