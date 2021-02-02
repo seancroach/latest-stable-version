@@ -1,6 +1,6 @@
 {
   "name": "latest-stable-version",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Utility function to get the latest cleaned stable SemVer version from GitHub releases.",
   "license": "MIT",
   "repository": "seancroach/latest-stable-version",
