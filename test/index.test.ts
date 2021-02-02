@@ -13,7 +13,7 @@ test("latestStableVersion()", async (t) => {
   t.throws(() => {
     void latestStableVersion({
       owner: "seancroach",
-      repo: "if-i-name-a-repo-this-shoot-me-down-where-i-stand"
+      repo: "if-i-name-a-repo-this-shoot-me-down-where-i-stand",
     });
   });
 });
